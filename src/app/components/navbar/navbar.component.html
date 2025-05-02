@@ -1,17 +1,61 @@
-<div class="md:hidden">
-    <div class="flex justify-between items-center p-4 bg-gray-800">
-      <a href="#" class="text-white text-2xl font-bold">MyLogo</a>
-      <button class="text-white">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
+<div class="navbar fixed top-0 w-full bg-gray-900 text-white shadow-lg z-50">
+  <div class="container mx-auto flex justify-between items-center p-4">
+    <!-- Logo -->
+    <a href="#" class="text-2xl font-bold text-yellow-400">FlavorShare</a>
+
+    <!-- Desktop Navigation + Search -->
+    <div class="hidden md:flex items-center space-x-6">
+      <!-- Navigation Links -->
+      <div class="flex space-x-4">
+        <a href="/" class="hover:text-yellow-400">Accueil</a>
+        <a href="/recipe-list" class="hover:text-yellow-400">Catégories</a>
+        <a href="/about" class="hover:text-yellow-400">About</a>
+        <a href="/contact" class="hover:text-yellow-400">Contact</a>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="flex items-center space-x-2">
+        <input 
+          type="text" 
+          placeholder="Rechercher une recette..." 
+          class="px-4 py-2 rounded-md bg-gray-800 border border-gray-600 placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
+        />
+        <button class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-md font-semibold">
+          Rechercher
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="md:hidden" onclick="toggleMenu()">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="menu" class="md:hidden hidden flex flex-col items-center bg-gray-800 p-4 space-y-4">
+    <a href="/" class="text-white hover:text-yellow-400">Accueil</a>
+    <a href="/recipe-list" class="text-white hover:text-yellow-400">Catégories</a>
+    <a href="/about" class="text-white hover:text-yellow-400">About</a>
+    <a href="/contact" class="text-white hover:text-yellow-400">Contact</a>
+    <!-- Search for mobile -->
+    <div class="w-full flex flex-col items-center space-y-2 pt-2">
+      <input 
+        type="text" 
+        placeholder="Rechercher une recette..." 
+        class="w-full px-4 py-2 rounded-md bg-gray-700 border border-gray-600 placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
+      />
+      <button class="w-full bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-md font-semibold">
+        Rechercher
       </button>
     </div>
-    <div class="flex flex-col items-center bg-gray-800 p-4 space-y-4">
-      <a href="/" class="text-white hover:text-gray-300">Accueil</a>
-      <a href="/recipe-list" class="text-white hover:text-gray-300">Catégories</a>
-        <a href="/about" class="text-white hover:text-gray-300">About</a>
-      <a href="/contact" class="text-white hover:text-gray-300">Contact</a>
-    </div>
   </div>
-  
+</div>
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('hidden');
+  }
+</script>
