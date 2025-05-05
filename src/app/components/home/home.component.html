@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Food Heaven</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Optional: smoother scroll behavior */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body class="bg-gray-100 font-sans">
 
-  
-  <section class="bg-cover bg-center h-screen relative" style="background-image: url('https://wallpapers.com/images/hd/food-4k-m37wpodzrcbv5gvw.jpg');">
-    <div class="absolute inset-0 bg-black opacity-50"></div>
-    <div class="relative z-10 text-center text-white py-32">
-      <h1 class="text-5xl font-bold mb-4">Welcome to Food Heaven</h1>
-      <p class="text-xl mb-8">Discover the best dishes, recipes, and more</p>
-      <a href="#categories" class="bg-yellow-500 text-gray-800 px-6 py-3 rounded-full text-lg hover:bg-yellow-400 transition">Explore Categories</a>
+  <!-- Hero Section -->
+  <section class="relative h-screen bg-cover bg-center" style="background-image: url('https://wallpapers.com/images/hd/food-4k-m37wpodzrcbv5gvw.jpg');">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col justify-center items-start h-full px-8 md:px-24 text-white">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome to <span class="text-yellow-400">Food Heaven</span></h1>
+      <p class="text-lg md:text-2xl mb-8 max-w-xl">Discover the best dishes, recipes, and more with curated content and inspiration for every taste.</p>
+      <a href="#categories" class="bg-yellow-500 text-gray-900 px-6 py-3 rounded-full text-lg font-semibold hover:bg-yellow-400 transition duration-300">
+        Explore Categories
+      </a>
     </div>
   </section>
-  
 
 </body>
 </html>

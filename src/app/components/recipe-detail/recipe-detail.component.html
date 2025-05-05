@@ -1,0 +1,50 @@
+<section class="py-16 px-6 bg-white">
+  <!-- Error Message -->
+  <div *ngIf="error" class="text-red-500 text-center text-xl mb-8">
+    {{ error }}
+  </div>
+
+  <!-- Loading Spinner -->
+  <div *ngIf="isLoading" class="text-xl text-gray-500 text-center mb-8">
+    <span class="inline-block animate-spin w-8 h-8 border-4 border-t-4 border-gray-300 rounded-full"></span>
+    Loading recipe details...
+  </div>
+
+  <!-- Meal Details -->
+  <div *ngIf="!isLoading && meal" class="max-w-5xl mx-auto px-4">
+    <!-- Back to Recipe List Link -->
+    
+
+    <!-- Meal Image & Title -->
+    <div class="text-center mb-12">
+      <img [src]="meal.strMealThumb" alt="{{ meal.strMeal }}" class="rounded-xl w-full h-96 object-cover shadow-xl transition-transform transform hover:scale-105">
+      <h2 class="text-5xl font-bold mt-6 text-gray-900">{{ meal.strMeal }}</h2>
+      <p class="text-lg text-gray-600 mt-2">{{ meal.strCategory }} | {{ meal.strArea }}</p>
+    </div>
+
+    <!-- Ingredients -->
+    <div class="mt-12">
+      <h3 class="text-3xl font-semibold mb-6 text-gray-800">Ingredients</h3>
+      <ul class="list-disc pl-6 space-y-4 text-lg text-gray-700">
+        <li *ngFor="let ingredient of getIngredients()">
+          <span class="font-semibold">{{ ingredient.name }}:</span> {{ ingredient.quantity }}
+        </li>
+      </ul>
+    </div>
+
+    <!-- Instructions -->
+    <div class="mt-12">
+      <h3 class="text-3xl font-semibold mb-6 text-gray-800">Instructions</h3>
+      <p class="text-lg text-gray-700 whitespace-pre-line">{{ meal.strInstructions }}</p>
+    </div>
+
+    <!-- Full Recipe Link -->
+    <div class="mt-12 text-center">
+      <div class="mb-6 text-center">
+        <a [routerLink]="['/recipe-list']" class="text-yellow-500 hover:text-yellow-400 font-semibold text-lg transition-all duration-300">
+          &larr; Back to Recipes
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -5,13 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { HomeComponent } from "./components/home/home.component";
-
+import { ApplicationConfig } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, RouterOutlet, FooterComponent, NavbarComponent, RecipeListComponent, HomeComponent], // if needed
+  imports: [CommonModule, HttpClientModule, RouterOutlet, FooterComponent, NavbarComponent, RecipeListComponent], // if needed
   templateUrl: './app.component.html'
 })
 export class AppComponent {

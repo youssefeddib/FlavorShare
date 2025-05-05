@@ -9,4 +9,19 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  isopen :boolean = false; 
+toggleMenu() {
+  if (this.isopen) {
+    this.isopen = false; 
+
+    document.getElementById("menu")?.classList.add("md:hidden");
+  }
+  else {
+    this.isopen = true; 
+    document.getElementById("menu")?.classList.remove("md:hidden");
+
+  }
+
+}
+
 }
